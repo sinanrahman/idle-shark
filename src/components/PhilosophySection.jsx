@@ -26,13 +26,13 @@ export default function PhilosophySection() {
   }, []);
 
   return (
-    <section className="h-screen bg-secondary flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-background/50"></div>
+    <section className="h-screen bg-gray-100 flex items-center justify-center relative overflow-hidden">
+      <div className="absolute inset-0 z-0 bg-white/50"></div>
       
       {/* Background noise/grain can be added via CSS if desired, skipped for now */}
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-        <h2 ref={textRef} className="text-6xl md:text-8xl lg:text-[100px] font-heading font-medium text-white leading-none tracking-tighter">
+        <h2 ref={textRef} className="text-6xl md:text-8xl lg:text-[100px] font-heading font-bold text-gray-900 leading-none tracking-tighter">
           "If It Doesn't Perform,<br/>
           <span className="text-gray-500 italic">It Doesn't Matter."</span>
         </h2>

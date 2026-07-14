@@ -3,7 +3,7 @@ import MagneticButton from './MagneticButton';
 
 export default function AboutSection() {
   return (
-    <section className="py-32 bg-background relative">
+    <section className="py-32 bg-white relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col lg:flex-row items-center gap-20">
           
@@ -15,11 +15,11 @@ export default function AboutSection() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-sm font-medium text-accent tracking-widest uppercase mb-6">About Idle Shark</h2>
-              <h3 className="text-4xl md:text-5xl font-heading font-medium text-white mb-8 leading-tight">
+              <h3 className="text-4xl md:text-5xl font-heading font-medium text-gray-900 mb-8 leading-tight">
                 A digital agency built on a foundation of excellence and innovation.
               </h3>
               
-              <div className="space-y-6 text-gray-400 text-lg">
+              <div className="space-y-6 text-gray-600 text-lg">
                 <p>
                   Our mission is to empower brands with digital solutions that are not only visually stunning but technically superior. We believe in the perfect synergy of design and engineering.
                 </p>

@@ -12,11 +12,11 @@ export default function IndustriesSection() {
   ];
 
   return (
-    <section className="py-32 bg-secondary border-t border-white/5 relative">
+    <section className="py-32 bg-white border-t border-gray-200 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-heading font-medium text-white mb-6">Industries We Transform</h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">We bring cross-industry expertise to deliver innovative solutions tailored to your unique market challenges.</p>
+          <h2 className="text-4xl md:text-5xl font-heading font-medium text-gray-900 mb-6">Industries We Transform</h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">We bring cross-industry expertise to deliver innovative solutions tailored to your unique market challenges.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -27,13 +27,13 @@ export default function IndustriesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="bg-background/50 border border-white/5 p-8 rounded-2xl hover:bg-white/5 hover:border-white/10 transition-all duration-300 group cursor-hover"
+              className="bg-gray-50 border border-gray-200 p-8 rounded-2xl hover:bg-white hover:border-gray-300 transition-all duration-300 group cursor-hover"
             >
               <div className="w-14 h-14 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-6 group-hover:bg-accent-hover-hover group-hover:text-white transition-colors duration-300">
                 <ind.icon className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-heading font-medium text-white mb-3">{ind.name}</h3>
-              <p className="text-gray-400 leading-relaxed">{ind.desc}</p>
+              <h3 className="text-2xl font-heading font-medium text-gray-900 mb-3">{ind.name}</h3>
+              <p className="text-gray-600 leading-relaxed">{ind.desc}</p>
             </motion.div>
           ))}
         </div>

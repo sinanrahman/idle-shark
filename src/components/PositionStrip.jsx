@@ -9,9 +9,9 @@ export default function PositionStrip() {
   ];
 
   return (
-    <section className="py-20 bg-secondary relative border-y border-white/5">
+    <section className="py-20 bg-gray-50 relative border-y border-gray-200">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-gray-200">
           
           {metrics.map((metric, i) => (
             <motion.div 
@@ -25,8 +25,8 @@ export default function PositionStrip() {
               <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-6 text-accent group-hover:bg-accent-hover-hover group-hover:text-white group-hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] transition-all duration-500">
                 <metric.icon className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-heading font-medium text-white mb-3">{metric.title}</h3>
-              <p className="text-gray-400">{metric.desc}</p>
+              <h3 className="text-2xl font-heading font-medium text-gray-900 mb-3">{metric.title}</h3>
+              <p className="text-gray-600">{metric.desc}</p>
             </motion.div>
           ))}
 

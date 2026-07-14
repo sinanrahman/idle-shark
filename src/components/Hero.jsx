@@ -129,7 +129,7 @@ export default function Hero() {
             initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            src="/image/hero-video.mp4"
+            src="/image/hero-video.mov"
             className="w-full h-full object-cover object-center opacity-90 transition-all duration-700"
           />
 
@@ -140,7 +140,7 @@ export default function Hero() {
               {/* Rotating Text SVG */}
               <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full animate-[spin_10s_linear_infinite]">
                 <path id="circlePath" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="transparent" />
-                <text className="text-[11px] fill-white tracking-[0.15em] font-sans font-medium uppercase">
+                <text className="text-[11px] fill-gray-900 tracking-[0.15em] font-sans font-medium uppercase">
                   <textPath href="#circlePath" startOffset="0%" textLength="226">CREATE • IDEA • INSIGHT • SOLUTION • </textPath>
                 </text>
               </svg>
@@ -151,7 +151,7 @@ export default function Hero() {
               </div>
             </div>
             {/* Scroll down text perfectly aligned below */}
-            <span className="text-white text-sm font-medium mt-4 tracking-wide cursor-hover">Scroll down ~</span>
+            <span className="text-gray-900 text-sm font-medium mt-4 tracking-wide cursor-hover">Scroll down ~</span>
           </div>
         </div>
       </div>

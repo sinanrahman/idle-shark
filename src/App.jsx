@@ -4,6 +4,7 @@ import Lenis from 'lenis';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import Preloader from './components/Preloader';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -48,6 +49,7 @@ function Layout() {
 
   return (
     <>
+      <Preloader />
       <CustomCursor />
       <Sidebar />
       <ScrollToTop />
