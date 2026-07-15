@@ -26,16 +26,27 @@ export default function PhilosophySection() {
   }, []);
 
   return (
-    <section className="h-screen bg-gray-100 flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-white/50"></div>
+    <section className="h-screen bg-surface-container-low flex items-center justify-center relative overflow-hidden">
+      <div className="absolute inset-0 z-0 bg-canvas-white/50"></div>
       
       {/* Background noise/grain can be added via CSS if desired, skipped for now */}
       
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-        <h2 ref={textRef} className="text-6xl md:text-8xl lg:text-[100px] font-heading font-bold text-gray-900 leading-none tracking-tighter">
+      <div className="relative z-10 max-w-[var(--spacing-container-max)] mx-auto px-margin-edge text-center">
+        <h2 ref={textRef} className="text-headline-lg-mobile md:text-display-xl lg:text-[100px] font-hanken font-bold text-surface-charcoal leading-none tracking-tighter mb-8">
           "If It Doesn't Perform,<br/>
-          <span className="text-gray-500 italic">It Doesn't Matter."</span>
+          <span className="text-neutral-muted italic">It Doesn't Matter."</span>
         </h2>
+        
+        <p className="text-neutral-muted text-body-lg max-w-3xl mx-auto leading-relaxed mb-12">
+          Digital success is not about accumulating more content or more features. It is about clarity, focus, and execution aligned to genuine business goals. That is how we build systems that deliver consistent results — not one-off wins.
+        </p>
+        
+        <div className="flex flex-col items-center">
+          <p className="text-surface-charcoal font-bold text-headline-sm mb-6">Ready to Improve Your Digital Performance?</p>
+          <button className="px-8 py-4 bg-accent-orange text-canvas-white rounded-md font-inter font-bold hover:bg-accent-orange/90 shadow-[0_4px_12px_rgba(250,100,0,0.3)] hover:-translate-y-1 transition-all duration-300">
+            Book a Call
+          </button>
+        </div>
       </div>
     </section>
   );

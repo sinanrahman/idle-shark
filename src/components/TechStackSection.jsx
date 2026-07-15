@@ -4,17 +4,17 @@ export default function TechStackSection() {
   const technologies = [
     { name: 'React', x: '10%', y: '20%' },
     { name: 'Vue', x: '80%', y: '30%' },
-    { name: 'Node.js', x: '20%', y: '60%' },
-    { name: 'Python', x: '70%', y: '70%' },
-    { name: 'AWS', x: '40%', y: '10%' },
-    { name: 'Vercel', x: '60%', y: '80%' },
-    { name: 'GraphQL', x: '85%', y: '50%' },
-    { name: 'PostgreSQL', x: '15%', y: '85%' },
-    { name: 'Three.js', x: '50%', y: '40%' },
+    { name: 'APIs', x: '20%', y: '60%' },
+    { name: 'Databases', x: '70%', y: '70%' },
+    { name: 'WordPress', x: '40%', y: '10%' },
+    { name: 'Shopify', x: '60%', y: '80%' },
+    { name: 'Analytics', x: '85%', y: '50%' },
+    { name: 'Custom Builds', x: '15%', y: '85%' },
+    { name: 'Cloud Infrastructure', x: '50%', y: '40%' },
   ];
 
   return (
-    <section className="h-[80vh] bg-white relative overflow-hidden flex items-center justify-center border-y border-gray-200">
+    <section className="h-[80vh] bg-canvas-white relative overflow-hidden flex items-center justify-center border-y border-outline-variant">
       {/* Animated Code Background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none overflow-hidden font-mono text-sm leading-relaxed whitespace-pre p-8 select-none">
         {`function initializeCore() {
@@ -46,16 +46,16 @@ class QuantumEngine extends Engine {
 }`}
       </div>
 
-      <div className="relative z-10 text-center pointer-events-none">
-        <h2 className="text-5xl md:text-7xl font-heading font-bold text-gray-900 tracking-tight mb-6">Engineered for<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-400">Scale.</span></h2>
-        <p className="text-gray-600 text-xl max-w-lg mx-auto">We use modern, battle-tested technologies to build robust digital solutions.</p>
+      <div className="relative z-10 text-center pointer-events-none px-4">
+        <h2 className="text-headline-lg md:text-display-xl font-hanken font-bold text-surface-charcoal tracking-tight mb-6">Modern Stack.<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-orange to-primary-container">Future-Proof Thinking.</span></h2>
+        <p className="text-neutral-muted text-body-lg max-w-lg mx-auto">We work with proven, scalable technologies built for long-term performance.</p>
       </div>
 
       {/* Floating Tech Icons */}
       {technologies.map((tech, i) => (
         <motion.div
           key={i}
-          className="absolute hidden md:flex items-center justify-center px-6 py-3 rounded-full bg-white/80 backdrop-blur-md border border-gray-200 text-gray-900 font-medium shadow-xl"
+          className="absolute hidden md:flex items-center justify-center px-6 py-3 rounded-full bg-canvas-white/80 backdrop-blur-md border border-outline-variant text-surface-charcoal font-bold shadow-[0_32px_64px_rgba(36,42,51,0.05)]"
           style={{ left: tech.x, top: tech.y }}
           animate={{
             y: [0, -15, 0],

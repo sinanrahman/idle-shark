@@ -3,8 +3,8 @@ import MagneticButton from './MagneticButton';
 
 export default function AboutSection() {
   return (
-    <section className="py-32 bg-white relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="py-section-gap bg-canvas-white relative">
+      <div className="max-w-[var(--spacing-container-max)] mx-auto px-margin-edge">
         <div className="flex flex-col lg:flex-row items-center gap-20">
           
           <div className="w-full lg:w-1/2">
@@ -14,30 +14,30 @@ export default function AboutSection() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-sm font-medium text-accent tracking-widest uppercase mb-6">About Idle Shark</h2>
-              <h3 className="text-4xl md:text-5xl font-heading font-medium text-gray-900 mb-8 leading-tight">
-                A digital agency built on a foundation of excellence and innovation.
+              <h2 className="text-label-md text-accent-orange uppercase mb-6">About Idle Shark</h2>
+              <h3 className="text-headline-lg font-hanken font-bold text-surface-charcoal mb-8 leading-tight">
+                We Don't Build Digital Products. We Build Momentum.
               </h3>
               
-              <div className="space-y-6 text-gray-600 text-lg">
+              <div className="space-y-6 text-neutral-muted text-body-lg">
                 <p>
-                  Our mission is to empower brands with digital solutions that are not only visually stunning but technically superior. We believe in the perfect synergy of design and engineering.
+                  Your business doesn't need more content, more tools, or more noise. It needs direction, precision, and execution that actually moves the numbers.
                 </p>
                 <p>
-                  With a visionary approach to every project, we challenge the status quo to deliver award-winning experiences that leave a lasting impact on your audience.
+                  Idle Shark works with startups, scaling businesses, and established brands looking to strengthen their digital performance. We integrate design, development, branding, and marketing into a single, growth-focused system.
                 </p>
               </div>
 
               <div className="mt-12">
-                <MagneticButton className="px-8 py-4 bg-white text-background rounded-full font-medium tracking-wide hover:bg-gray-200 transition-colors">
-                  Learn More About Us
+                <MagneticButton className="px-8 py-4 bg-canvas-white text-surface-charcoal rounded-md font-inter font-bold hover:bg-surface-variant shadow-[0_4px_12px_rgba(36,42,51,0.1)] hover:-translate-y-1 transition-all duration-300">
+                  Book a Call
                 </MagneticButton>
               </div>
             </motion.div>
           </div>
 
-          <div className="w-full lg:w-1/2 relative h-[600px] rounded-3xl overflow-hidden group">
-            <div className="absolute inset-0 bg-accent/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="w-full lg:w-1/2 relative h-[600px] rounded-xl overflow-hidden group shadow-[0_32px_64px_rgba(36,42,51,0.05)]">
+            <div className="absolute inset-0 bg-accent-orange/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <motion.img 
               initial={{ scale: 1.1 }}
               whileInView={{ scale: 1 }}

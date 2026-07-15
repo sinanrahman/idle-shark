@@ -23,7 +23,7 @@ export default function Preloader() {
             initial={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.2 }}
-            className="absolute top-0 left-0 w-1/2 h-full bg-black"
+            className="absolute top-0 left-0 w-1/2 h-full bg-canvas-white"
           />
 
           {/* Right Background Panel */}
@@ -31,7 +31,7 @@ export default function Preloader() {
             initial={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.2 }}
-            className="absolute top-0 right-0 w-1/2 h-full bg-white"
+            className="absolute top-0 right-0 w-1/2 h-full bg-canvas-white"
           />
 
           {/* Center Content Container */}

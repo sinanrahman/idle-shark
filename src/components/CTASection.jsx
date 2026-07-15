@@ -3,10 +3,10 @@ import MagneticButton from './MagneticButton';
 
 export default function CTASection() {
   return (
-    <section className="relative py-40 overflow-hidden">
+    <section className="relative py-section-gap overflow-hidden">
       {/* Background with London Skyline Placeholder */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-white/90 z-10"></div>
+        <div className="absolute inset-0 bg-canvas-white/90 z-10"></div>
         <img 
           src="/image/logo.jpeg" 
           alt="London Skyline" 
@@ -14,29 +14,52 @@ export default function CTASection() {
         />
       </div>
 
-      <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 text-center">
-        <motion.h2 
+      <div className="relative z-20 max-w-[var(--spacing-container-max)] mx-auto px-margin-edge text-center">
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-8xl font-heading font-bold text-gray-900 mb-10 tracking-tight"
+          className="mb-12"
         >
-          Ready to scale<br/>your impact?
+          <p className="text-accent-orange text-label-md uppercase tracking-wider font-bold mb-4">We Operate as an Extension of Your Business</p>
+          <p className="text-surface-charcoal font-medium text-body-lg max-w-2xl mx-auto">
+            We don't simply manage projects — we take ownership of outcomes. Every decision we make is aligned with your growth.
+          </p>
+        </motion.div>
+
+        <motion.h2 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-headline-lg md:text-display-xl font-hanken font-bold text-surface-charcoal mb-6 tracking-tight"
+        >
+          If Growth Is the Goal —<br/>You're in the Right Place
         </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-neutral-muted text-body-lg"
+        >
+          Let's build something that works as hard as you do.
+        </motion.p>
 
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-12"
         >
-          <MagneticButton className="px-10 py-5 bg-accent text-white rounded-full font-medium text-lg tracking-wide shadow-[0_0_40px_rgba(249,115,22,0.4)] hover:shadow-[0_0_60px_rgba(249,115,22,0.6)] hover:bg-orange-500 transition-all duration-300">
+          <MagneticButton className="px-10 py-5 bg-accent-orange text-canvas-white rounded-md text-body-lg font-bold hover:shadow-[0_8px_32px_rgba(250,100,0,0.3)] hover:bg-accent-orange/90 hover:-translate-y-1 transition-all duration-300">
             Start Your Project
           </MagneticButton>
-          <MagneticButton className="px-10 py-5 bg-gray-900 text-white rounded-full font-medium text-lg tracking-wide hover:bg-gray-800 transition-colors">
-            Book Consultation
+          <MagneticButton className="px-10 py-5 bg-surface-charcoal text-canvas-white rounded-md text-body-lg font-bold hover:bg-surface-charcoal/90 hover:shadow-[0_8px_32px_rgba(36,42,51,0.2)] hover:-translate-y-1 transition-all duration-300">
+            Speak With Our Team
           </MagneticButton>
         </motion.div>
       </div>

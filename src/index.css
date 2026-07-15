@@ -1,17 +1,107 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #ffffff;
-  --color-secondary: #f3f4f6;
-  --color-accent: #f97316;
-  --color-accent-hover: #ea580c;
-  --font-sans: "Plus Jakarta Sans", sans-serif;
-  --font-heading: "Space Grotesk", sans-serif;
+  /* Colors */
+  --color-surface: #fff8f6;
+  --color-surface-dim: #efd5ca;
+  --color-surface-bright: #fff8f6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #fff1ec;
+  --color-surface-container: #ffe9e1;
+  --color-surface-container-high: #fee3d8;
+  --color-surface-container-highest: #f8ddd2;
+  --color-on-surface: #261812;
+  --color-on-surface-variant: #5a4137;
+  --color-inverse-surface: #3d2d26;
+  --color-inverse-on-surface: #ffede7;
+  --color-outline: #8e7164;
+  --color-outline-variant: #e2bfb1;
+  --color-surface-tint: #a33e00;
+  --color-primary: #a33e00;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #fa6400;
+  --color-on-primary-container: #511b00;
+  --color-inverse-primary: #ffb596;
+  --color-secondary: #595f69;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #dde3ef;
+  --color-on-secondary-container: #5f656f;
+  --color-tertiary: #515f73;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #8695aa;
+  --color-on-tertiary-container: #1f2e3f;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed: #ffdbcd;
+  --color-primary-fixed-dim: #ffb596;
+  --color-on-primary-fixed: #360f00;
+  --color-on-primary-fixed-variant: #7c2e00;
+  --color-secondary-fixed: #dde3ef;
+  --color-secondary-fixed-dim: #c1c7d3;
+  --color-on-secondary-fixed: #161c25;
+  --color-on-secondary-fixed-variant: #414751;
+  --color-tertiary-fixed: #d4e4fb;
+  --color-tertiary-fixed-dim: #b9c8de;
+  --color-on-tertiary-fixed: #0d1c2d;
+  --color-on-tertiary-fixed-variant: #39485a;
+  --color-background: #fff8f6;
+  --color-on-background: #261812;
+  --color-surface-variant: #f8ddd2;
+  --color-surface-charcoal: #242A33;
+  --color-accent-orange: #FA6400;
+  --color-neutral-muted: #A7B6CC;
+  --color-canvas-white: #FFFFFF;
+
+  /* Typography */
+  --font-hanken: "Hanken Grotesk", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  
+  /* Adding these generic text sizes since we are migrating from standard tailwind sizes */
+  --text-display-xl: 72px;
+  --text-display-xl--line-height: 80px;
+  --text-display-xl--letter-spacing: -0.02em;
+  --text-headline-lg: 48px;
+  --text-headline-lg--line-height: 56px;
+  --text-headline-lg--letter-spacing: -0.01em;
+  --text-headline-lg-mobile: 32px;
+  --text-headline-lg-mobile--line-height: 40px;
+  --text-headline-md: 32px;
+  --text-headline-md--line-height: 40px;
+  --text-headline-sm: 24px;
+  --text-headline-sm--line-height: 32px;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-label-md: 14px;
+  --text-label-md--line-height: 20px;
+  --text-label-md--letter-spacing: 0.05em;
+  --text-caption: 12px;
+  --text-caption--line-height: 16px;
+
+  /* Rounded */
+  --radius-sm: 0.25rem;
+  --radius-DEFAULT: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --spacing-container-max: 1280px;
+  --spacing-gutter: 2rem;
+  --spacing-margin-edge: 1.5rem;
+  --spacing-section-gap: 8rem;
+  --spacing-stack-sm: 0.5rem;
+  --spacing-stack-md: 1rem;
+  --spacing-stack-lg: 2rem;
 }
 
 @layer base {
   body {
-    @apply bg-background text-gray-700 font-sans antialiased overflow-x-hidden;
+    @apply bg-canvas-white text-surface-charcoal font-inter antialiased overflow-x-hidden;
     /* Hide default cursor on desktop, but keep it on smaller screens if we want */
     cursor: none;
   }
@@ -31,7 +121,7 @@
   h4,
   h5,
   h6 {
-    @apply font-heading text-gray-900 font-medium;
+    @apply font-hanken text-surface-charcoal font-bold;
   }
 }
 
@@ -59,15 +149,15 @@ html.lenis body {
 
 /* Custom Cursor Styles */
 .custom-cursor {
-  @apply fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-accent pointer-events-none z-[9999] mix-blend-difference flex items-center justify-center;
+  @apply fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-accent-orange pointer-events-none z-[9999] mix-blend-difference flex items-center justify-center;
   transform: translate(-50%, -50%);
   transition: width 0.3s, height 0.3s, background-color 0.3s;
 }
 
 .custom-cursor-dot {
-  @apply w-1.5 h-1.5 bg-accent rounded-full;
+  @apply w-1.5 h-1.5 bg-accent-orange rounded-full;
 }
 
 .custom-cursor.hover {
-  @apply w-16 h-16 bg-accent/20 backdrop-blur-sm;
+  @apply w-16 h-16 bg-accent-orange/20 backdrop-blur-sm;
 }

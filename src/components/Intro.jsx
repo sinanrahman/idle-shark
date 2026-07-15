@@ -31,8 +31,8 @@ export default function Intro() {
   };
 
   return (
-    <section ref={containerRef} className="py-32 relative overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-16">
+    <section ref={containerRef} className="py-section-gap relative overflow-hidden bg-canvas-white">
+      <div className="max-w-[var(--spacing-container-max)] mx-auto px-margin-edge flex flex-col lg:flex-row items-center gap-16">
         
         {/* Left: Text */}
         <div className="w-full lg:w-1/2">
@@ -41,7 +41,7 @@ export default function Intro() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="text-5xl md:text-6xl font-heading font-bold text-gray-900 leading-tight"
+            className="text-headline-lg md:text-display-xl font-hanken font-bold text-surface-charcoal leading-tight"
           >
             <div className="block mb-2">
               {sentence1.split(' ').map((word, i) => (
@@ -50,7 +50,7 @@ export default function Intro() {
                 </motion.span>
               ))}
             </div>
-            <div className="block text-gray-500">
+            <div className="block text-accent-orange">
               {sentence2.split(' ').map((word, i) => (
                 <motion.span key={i} variants={wordVariants} className="inline-block mr-3">
                   {word}
@@ -64,9 +64,11 @@ export default function Intro() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="mt-8 text-gray-700 text-lg max-w-lg leading-relaxed"
+            className="mt-8 text-neutral-muted text-body-lg max-w-lg leading-relaxed space-y-4"
           >
-            We don't just build websites; we engineer digital ecosystems that convert visitors into loyal customers. Our approach blends cutting-edge technology with award-winning design to create experiences that are as beautiful as they are functional.
+            <span className="block font-medium text-surface-charcoal">Most digital products look polished. Very few actually move a business forward.</span>
+            <span className="block text-accent-orange font-bold">Idle Shark exists to close that gap.</span>
+            <span className="block">We bring together strategy, design, and technology to create digital ecosystems that generate real visibility, stronger engagement, and measurable growth — built for brands that expect more than just an online presence.</span>
           </motion.p>
         </div>
 
@@ -76,7 +78,7 @@ export default function Intro() {
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="w-full lg:w-1/2 h-[500px] rounded-2xl overflow-hidden relative shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
+          className="w-full lg:w-1/2 h-[500px] rounded-xl overflow-hidden relative shadow-[0_32px_64px_rgba(36,42,51,0.05)]"
         >
           <img 
             src="/image/about.png" 
