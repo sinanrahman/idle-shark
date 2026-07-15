@@ -53,7 +53,7 @@ function Layout() {
       <CustomCursor />
       <Sidebar />
       <ScrollToTop />
-      <div className="ml-20 md:ml-24 flex flex-col min-h-screen">
+      <div className="ml-0 md:ml-24 pt-16 md:pt-0 flex flex-col min-h-screen">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

@@ -36,16 +36,15 @@ export default function AboutSection() {
             </motion.div>
           </div>
 
-          <div className="w-full lg:w-1/2 relative h-[600px] rounded-xl overflow-hidden group shadow-[0_32px_64px_rgba(36,42,51,0.05)]">
-            <div className="absolute inset-0 bg-accent-orange/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="w-full lg:w-1/2 relative h-[600px] rounded-xl overflow-hidden shadow-[0_32px_64px_rgba(36,42,51,0.05)] bg-canvas-white p-12">
             <motion.img 
               initial={{ scale: 1.1 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              src="/image/logo.jpeg" 
+              src="/image/content.png" 
               alt="Idle Shark Workspace" 
-              className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+              className="w-full h-full object-contain transition-all duration-700"
             />
           </div>
 

@@ -10,7 +10,6 @@ export default function TechStackSection() {
     { name: 'Shopify', x: '60%', y: '80%' },
     { name: 'Analytics', x: '85%', y: '50%' },
     { name: 'Custom Builds', x: '15%', y: '85%' },
-    { name: 'Cloud Infrastructure', x: '50%', y: '40%' },
   ];
 
   return (

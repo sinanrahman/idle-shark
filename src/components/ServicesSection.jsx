@@ -1,8 +1,11 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FiPlus, FiMinus } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 export default function ServicesSection() {
-  const [hoveredIndex, setHoveredIndex] = useState(1); // Default to Web Design hovered
+  const [hoveredIndex, setHoveredIndex] = useState(1); // For desktop hover
+  const [expandedIndex, setExpandedIndex] = useState(null); // For mobile accordion
   const imageContainerRef = useRef(null);
 
   const services = [
@@ -48,26 +51,24 @@ export default function ServicesSection() {
     },
   ];
 
-  // 3D Parallax Effect
+  // 3D Parallax Effect for Desktop
   const handleMouseMove = (e) => {
     if (!imageContainerRef.current) return;
     const { left, top, width, height } = imageContainerRef.current.getBoundingClientRect();
-    const x = (e.clientX - left - width / 2) / 20; // Sensitivity 
+    const x = (e.clientX - left - width / 2) / 20; 
     const y = (e.clientY - top - height / 2) / 20;
     
-    // Add the base skew to the dynamic mouse position
     imageContainerRef.current.style.transform = `perspective(1000px) rotateY(${x - 15}deg) rotateX(${-y + 10}deg) rotateZ(-3deg) scale(1.02)`;
   };
 
   const handleMouseLeave = () => {
     if (!imageContainerRef.current) return;
-    // Reset to base skew with a smooth transition
     imageContainerRef.current.style.transform = `perspective(1000px) rotateY(-15deg) rotateX(10deg) rotateZ(-3deg) scale(1)`;
   };
 
   return (
     <section className="bg-canvas-white w-full min-h-screen py-12 md:py-16 relative z-30 flex flex-col justify-center">
-      <div className="max-w-[var(--spacing-container-max)] mx-auto px-margin-edge w-full mb-16 lg:mb-24">
+      <div className="max-w-[var(--spacing-container-max)] mx-auto px-margin-edge w-full mb-12 lg:mb-24">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <div className="flex items-center space-x-2 text-accent-orange font-medium mb-4">
@@ -76,16 +77,16 @@ export default function ServicesSection() {
             </div>
             <h3 className="text-headline-md font-hanken font-bold text-surface-charcoal">End-to-End Digital Systems — Built to Scale</h3>
           </div>
-          <p className="text-neutral-muted text-body-md max-w-sm">We don't offer disconnected services. We build cohesive digital systems in which every element works together.</p>
+          <p className="text-neutral-muted text-body-md max-w-sm hidden md:block">We don't offer disconnected services. We build cohesive digital systems in which every element works together.</p>
         </div>
       </div>
 
-      <div className="max-w-[var(--spacing-container-max)] mx-auto px-margin-edge w-full flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-        
+      {/* ======================= */}
+      {/* DESKTOP VIEW (lg:flex)  */}
+      {/* ======================= */}
+      <div className="max-w-[var(--spacing-container-max)] mx-auto px-margin-edge w-full hidden lg:flex flex-row gap-12 items-center">
         {/* Left Column */}
-        <div className="w-full lg:w-[45%] flex flex-col justify-center">
-
-
+        <div className="w-[45%] flex flex-col justify-center">
           <div className="relative w-full max-w-[450px] aspect-[1.3] mb-16 ml-4" style={{ perspective: "1000px" }}>
             <div 
               ref={imageContainerRef}
@@ -109,7 +110,7 @@ export default function ServicesSection() {
             </div>
           </div>
 
-          <div className="pr-4 md:pr-12 max-w-[400px] min-h-[150px] relative">
+          <div className="pr-12 max-w-[400px] min-h-[150px] relative">
             <AnimatePresence mode="wait">
               <motion.div
                 key={hoveredIndex}
@@ -128,25 +129,93 @@ export default function ServicesSection() {
         </div>
 
         {/* Right Column */}
-        <div className="w-full lg:w-[55%] flex flex-col justify-center space-y-6 lg:space-y-8">
+        <div className="w-[55%] flex flex-col justify-center space-y-8">
           {services.map((service, index) => (
             <div 
               key={index} 
               className="group flex items-center justify-between cursor-hover"
               onMouseEnter={() => setHoveredIndex(index)}
             >
-              <div className="flex items-baseline space-x-4 md:space-x-8">
+              <div className="flex items-baseline space-x-8">
                 <span className="text-accent-orange font-hanken font-bold text-headline-sm w-6">{service.num}</span>
-                <h2 className={`text-headline-lg md:text-[55px] lg:text-[65px] font-hanken font-bold transition-colors duration-300 leading-none tracking-tight ${hoveredIndex === index ? 'text-accent-orange' : 'text-surface-charcoal'}`}>
+                <h2 className={`text-[65px] font-hanken font-bold transition-colors duration-300 leading-none tracking-tight ${hoveredIndex === index ? 'text-accent-orange' : 'text-surface-charcoal'}`}>
                   {service.title}
                 </h2>
               </div>
-              <span className="text-neutral-muted text-label-md uppercase hidden sm:block whitespace-nowrap pl-4">{service.category}</span>
+              <span className="text-neutral-muted text-label-md uppercase whitespace-nowrap pl-4">{service.category}</span>
             </div>
           ))}
         </div>
-
       </div>
+
+      {/* ======================= */}
+      {/* MOBILE/TABLET ACCORDION */}
+      {/* ======================= */}
+      <div className="max-w-[var(--spacing-container-max)] mx-auto px-margin-edge w-full flex lg:hidden flex-col">
+        {services.map((service, index) => {
+          const isExpanded = expandedIndex === index;
+
+          return (
+            <div 
+              key={index} 
+              className={`border-b border-outline-variant py-8 cursor-pointer transition-colors duration-300`}
+              onClick={() => setExpandedIndex(isExpanded ? null : index)}
+            >
+              {/* Row Header */}
+              <div className="flex items-center justify-between group">
+                <div className="flex items-baseline space-x-4">
+                  <span className="text-accent-orange font-hanken font-bold text-headline-sm w-8">{service.num}</span>
+                  <div className="flex flex-col">
+                    <h2 className={`text-headline-md md:text-display-md font-hanken font-bold transition-colors duration-300 leading-none tracking-tight ${isExpanded ? 'text-surface-charcoal' : 'text-surface-charcoal group-hover:text-accent-orange'}`}>
+                      {service.title}
+                    </h2>
+                    <span className="text-neutral-muted text-body-md mt-1 font-medium">{service.category}</span>
+                  </div>
+                </div>
+                
+                {/* Toggle Icon */}
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 flex-shrink-0 ${isExpanded ? 'bg-surface-charcoal text-canvas-white' : 'bg-surface-charcoal text-canvas-white'}`}>
+                  {isExpanded ? <FiMinus className="w-5 h-5" /> : <FiPlus className="w-5 h-5" />}
+                </div>
+              </div>
+
+              {/* Expandable Content */}
+              <AnimatePresence>
+                {isExpanded && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pt-6 pb-2 flex flex-col gap-6">
+                      <div className="w-full aspect-video rounded-xl overflow-hidden shadow-lg bg-surface-variant">
+                        <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+                      </div>
+                      <div className="w-full flex flex-col justify-center">
+                        <h3 className="text-accent-orange font-hanken font-bold text-headline-sm mb-3">{service.subTitle}</h3>
+                        <p className="text-surface-charcoal text-body-lg leading-[1.6]">
+                          {service.description}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          );
+        })}
+
+        {/* Mobile Footer Link */}
+        <div className="w-full mt-10 mb-4 flex justify-start">
+          <Link to="/contact" className="flex items-center space-x-4 text-surface-charcoal hover:text-accent-orange font-bold text-headline-sm transition-colors group">
+            <span className="text-accent-orange font-bold text-[32px] font-sans group-hover:translate-x-2 transition-transform duration-300">↳</span>
+            <span>See pricing</span>
+          </Link>
+        </div>
+      </div>
+
     </section>
   );
 }

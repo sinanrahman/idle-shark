@@ -20,20 +20,20 @@ export default function About() {
 
   return (
     <main className="min-h-screen bg-canvas-white pt-32 pb-20">
-      
+
       {/* Who We Are */}
       <section className="max-w-[var(--spacing-container-max)] mx-auto px-margin-edge py-section-gap">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
           <h2 className="text-label-md text-accent-orange uppercase mb-4 tracking-wider font-bold">Who We Are</h2>
           <h1 className="text-headline-lg-mobile md:text-display-xl font-hanken font-bold text-surface-charcoal leading-tight tracking-tight">
-            A Full-Service Digital<br/>Growth Partner.
+            A Full-Service Digital<br />Growth Partner.
           </h1>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -41,7 +41,7 @@ export default function About() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="rounded-xl overflow-hidden h-[500px] shadow-[0_32px_64px_rgba(36,42,51,0.05)]"
           >
-            <img src="/image/logo.jpeg" alt="Idle Shark Team" className="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700" />
+            <img src="/image/logo.jpeg" alt="Idle Shark Team" className="w-full h-full object-cover transition-all duration-700" />
           </motion.div>
           <div className="flex flex-col justify-center space-y-6 text-neutral-muted text-body-lg leading-relaxed">
             <p>
@@ -80,7 +80,7 @@ export default function About() {
               There is a clear distinction between what looks impressive and what actually performs. We build the latter.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whyChooseUs.map((item, i) => (
               <motion.div
@@ -114,7 +114,7 @@ export default function About() {
                 We apply a repeatable, four-stage framework to ensure consistency, clarity, and results across every engagement.
               </p>
             </div>
-            
+
             <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
               {approachSteps.map((step, i) => (
                 <div key={i} className="flex space-x-6 group">
