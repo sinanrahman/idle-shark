@@ -50,7 +50,7 @@ export default function ProcessSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="h-screen bg-canvas-white overflow-hidden relative flex flex-col justify-center">
+    <section id="process" ref={sectionRef} className="h-screen bg-canvas-white overflow-hidden relative flex flex-col justify-center">
       <div className="absolute top-32 left-6 md:left-12 z-10">
         <h2 className="text-headline-lg font-hanken font-bold text-surface-charcoal mb-2">Our Process</h2>
         <p className="text-neutral-muted text-body-lg">A System Designed for Predictable Growth</p>

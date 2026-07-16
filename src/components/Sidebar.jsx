@@ -8,11 +8,11 @@ export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { title: 'Home', path: '/' },
-    { title: 'About', path: '/about' },
-    { title: 'Services', path: '/services' },
-    { title: 'Testimonials', path: '/testimonials' },
+    { title: 'Home', path: '/#' },
+    { title: 'Process', path: '/#process' },
+    { title: 'Testimonials', path: '/#testimonials' },
     { title: 'Resources', path: '/resources' },
+    { title: 'Services', path: '/services' },
     { title: 'Contact', path: '/contact' },
   ];
 

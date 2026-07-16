@@ -10,14 +10,23 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Resources from './pages/Resources';
 import Contact from './pages/Contact';
-import Testimonials from './pages/Testimonials';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      // Small timeout to ensure the page has rendered before scrolling
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   return null;
 }
@@ -61,7 +70,6 @@ function Layout() {
           <Route path="/services" element={<Services />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/work" element={<Resources />} /> {/* Fallback for Work */}
         </Routes>
         <Footer />
