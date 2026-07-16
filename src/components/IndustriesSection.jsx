@@ -11,7 +11,7 @@ export default function IndustriesSection() {
   ];
 
   return (
-    <section className="py-section-gap bg-canvas-white border-t border-outline-variant relative">
+    <section className="py-section-gap bg-canvas-white border-t border-outline-variant relative z-20">
       <div className="max-w-[var(--spacing-container-max)] mx-auto px-margin-edge">
         <div className="text-center mb-20">
           <h2 className="text-headline-lg font-hanken font-bold text-surface-charcoal mb-6">Built for Ambitious Sectors</h2>

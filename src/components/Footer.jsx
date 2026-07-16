@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-surface pt-24 pb-12 border-t border-outline-variant relative overflow-hidden">
+    <footer className="bg-canvas-white pt-24 pb-12 border-t border-outline-variant relative overflow-hidden">
       <div className="max-w-[var(--spacing-container-max)] mx-auto px-margin-edge">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
@@ -25,12 +25,10 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="text-surface-charcoal text-label-md uppercase mb-6">Socials</h4>
+            <h4 className="text-surface-charcoal text-label-md uppercase font-bold tracking-wider mb-6">Contact Us</h4>
             <ul className="space-y-4 text-neutral-muted text-body-md">
-              <li><a href="#" className="hover:text-accent-orange transition-colors">Twitter / X</a></li>
-              <li><a href="#" className="hover:text-accent-orange transition-colors">Instagram</a></li>
-              <li><a href="#" className="hover:text-accent-orange transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-accent-orange transition-colors">Dribbble</a></li>
+              <li><a href="mailto:hello@idleshark.com" className="hover:text-accent-orange transition-colors">hello@idleshark.com</a></li>
+              <li><a href="tel:+1234567890" className="hover:text-accent-orange transition-colors">+1 234 567 890</a></li>
             </ul>
           </div>
         </div>

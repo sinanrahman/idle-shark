@@ -7,7 +7,7 @@ import ProcessSection from '../components/ProcessSection';
 import IndustriesSection from '../components/IndustriesSection';
 import TechStackSection from '../components/TechStackSection';
 import AboutSection from '../components/AboutSection';
-import PhilosophySection from '../components/PhilosophySection';
+import StatsSection from '../components/StatsSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import CTASection from '../components/CTASection';
 
@@ -23,7 +23,7 @@ export default function Home() {
       <IndustriesSection />
       <TechStackSection />
       <AboutSection />
-      <PhilosophySection />
+      <StatsSection />
       <TestimonialsSection />
       <CTASection />
     </main>

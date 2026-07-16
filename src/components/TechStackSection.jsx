@@ -13,7 +13,7 @@ export default function TechStackSection() {
   ];
 
   return (
-    <section className="h-[80vh] bg-canvas-white relative overflow-hidden flex items-center justify-center border-y border-outline-variant">
+    <section className="bg-canvas-white py-24 md:py-32 relative z-20 border-t border-outline-variant/30 overflow-hidden">
       {/* Animated Code Background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none overflow-hidden font-mono text-sm leading-relaxed whitespace-pre p-8 select-none">
         {`function initializeCore() {
@@ -46,7 +46,7 @@ class QuantumEngine extends Engine {
       </div>
 
       <div className="relative z-10 text-center pointer-events-none px-4">
-        <h2 className="text-headline-lg md:text-display-xl font-hanken font-bold text-surface-charcoal tracking-tight mb-6">Modern Stack.<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-orange to-primary-container">Future-Proof Thinking.</span></h2>
+        <h2 className="text-headline-lg md:text-display-xl font-hanken font-bold text-surface-charcoal tracking-tight mb-6">Modern Stack.<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-orange to-primary-container">Future-Proof Thinking.</span></h2>
         <p className="text-neutral-muted text-body-lg max-w-lg mx-auto">We work with proven, scalable technologies built for long-term performance.</p>
       </div>
 

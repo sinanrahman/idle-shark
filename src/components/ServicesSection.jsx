@@ -13,7 +13,7 @@ export default function ServicesSection() {
       num: '01',
       title: 'UX/UI Design',
       category: 'Design',
-      image: '/image/service-1.png',
+      image: '/image/branding.jpg',
       subTitle: '— User Experience —',
       description: 'We don\'t offer disconnected services. We build cohesive digital systems in which every element works together.'
     },
@@ -21,7 +21,7 @@ export default function ServicesSection() {
       num: '02',
       title: 'Development',
       category: 'Engineering',
-      image: '/image/service-2.png',
+      image: '/image/web-design.jpg',
       subTitle: '— Web & App —',
       description: 'We build cohesive digital systems in which every element works together to deliver seamless, fast, and secure platforms.'
     },
@@ -29,7 +29,7 @@ export default function ServicesSection() {
       num: '03',
       title: 'Branding & Identity',
       category: 'Strategy',
-      image: '/image/service-3.png',
+      image: '/image/marketing.jpg',
       subTitle: '— Positioning —',
       description: 'Your brand is more than visuals — it is perception, trust, and market clarity. We build brand systems that communicate value.'
     },
@@ -37,7 +37,7 @@ export default function ServicesSection() {
       num: '04',
       title: 'Digital Marketing',
       category: 'Growth',
-      image: '/image/service-4.png',
+      image: '/image/development.jpg',
       subTitle: '— Visibility — ',
       description: 'Traffic alone means nothing if it doesn\'t convert. We build marketing systems that attract the right users and turn them into customers.'
     },
@@ -45,7 +45,7 @@ export default function ServicesSection() {
       num: '05',
       title: 'Ongoing Support',
       category: 'Optimisation',
-      image: '/image/service-5.png',
+      image: '/image/support.jpg',
       subTitle: '— Continuous Improvement —',
       description: 'We monitor, optimise, and improve your digital systems to ensure sustained performance long after launch.'
     },

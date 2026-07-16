@@ -3,7 +3,7 @@ import MagneticButton from './MagneticButton';
 
 export default function AboutSection() {
   return (
-    <section className="py-section-gap bg-canvas-white relative">
+    <section className="py-section-gap bg-canvas-white relative z-20">
       <div className="max-w-[var(--spacing-container-max)] mx-auto px-margin-edge">
         <div className="flex flex-col lg:flex-row items-center gap-20">
           

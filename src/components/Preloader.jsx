@@ -47,7 +47,7 @@ export default function Preloader() {
               <img
                 src="/image/left.png"
                 alt="Left Split"
-                className="h-16 md:h-32 w-auto object-contain"
+                className="h-24 md:h-48 w-auto object-contain"
               />
             </motion.div>
 
@@ -62,7 +62,7 @@ export default function Preloader() {
               <img
                 src="/image/right.png"
                 alt="Right Split"
-                className="h-16 md:h-32 w-auto object-contain"
+                className="h-24 md:h-48 w-auto object-contain"
               />
             </motion.div>
           </div>
