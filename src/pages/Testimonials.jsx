@@ -4,7 +4,7 @@ import CTASection from '../components/CTASection';
 
 export default function Testimonials() {
   return (
-    <main className="min-h-screen bg-canvas-white pt-24 pb-0">
+    <main className="min-h-screen bg-canvas-white pb-0 pt-16 md:pt-0">
       <StatsSection />
       <TestimonialsSection />
       <CTASection />

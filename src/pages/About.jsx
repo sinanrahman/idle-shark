@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { FiTarget, FiEye, FiCheckCircle, FiLayers, FiTrendingUp, FiSearch, FiMessageSquare } from 'react-icons/fi';
-import PhilosophySection from '../components/PhilosophySection';
 
 export default function About() {
   const whyChooseUs = [
@@ -131,9 +130,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* Philosophy Section */}
-      <PhilosophySection />
 
     </main>
   );
