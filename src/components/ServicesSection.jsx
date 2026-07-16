@@ -9,43 +9,43 @@ export default function ServicesSection() {
   const imageContainerRef = useRef(null);
 
   const services = [
-    { 
-      num: '01', 
-      title: 'UX/UI Design', 
-      category: 'Design', 
-      image: '/image/branding.jpg',
+    {
+      num: '01',
+      title: 'UX/UI Design',
+      category: 'Design',
+      image: '/image/service-1.png',
       subTitle: '— User Experience —',
       description: 'We don\'t offer disconnected services. We build cohesive digital systems in which every element works together.'
     },
-    { 
-      num: '02', 
-      title: 'Development', 
-      category: 'Engineering', 
-      image: '/image/web-design.jpg',
+    {
+      num: '02',
+      title: 'Development',
+      category: 'Engineering',
+      image: '/image/service-2.png',
       subTitle: '— Web & App —',
       description: 'We build cohesive digital systems in which every element works together to deliver seamless, fast, and secure platforms.'
     },
-    { 
-      num: '03', 
-      title: 'Branding & Identity', 
-      category: 'Strategy', 
-      image: '/image/marketing.jpg',
+    {
+      num: '03',
+      title: 'Branding & Identity',
+      category: 'Strategy',
+      image: '/image/service-3.png',
       subTitle: '— Positioning —',
       description: 'Your brand is more than visuals — it is perception, trust, and market clarity. We build brand systems that communicate value.'
     },
-    { 
-      num: '04', 
-      title: 'Digital Marketing', 
-      category: 'Growth', 
-      image: '/image/development.jpg',
+    {
+      num: '04',
+      title: 'Digital Marketing',
+      category: 'Growth',
+      image: '/image/service-4.png',
       subTitle: '— Visibility — ',
       description: 'Traffic alone means nothing if it doesn\'t convert. We build marketing systems that attract the right users and turn them into customers.'
     },
-    { 
-      num: '05', 
-      title: 'Ongoing Support', 
-      category: 'Optimisation', 
-      image: '/image/support.jpg', 
+    {
+      num: '05',
+      title: 'Ongoing Support',
+      category: 'Optimisation',
+      image: '/image/service-5.png',
       subTitle: '— Continuous Improvement —',
       description: 'We monitor, optimise, and improve your digital systems to ensure sustained performance long after launch.'
     },
@@ -55,9 +55,9 @@ export default function ServicesSection() {
   const handleMouseMove = (e) => {
     if (!imageContainerRef.current) return;
     const { left, top, width, height } = imageContainerRef.current.getBoundingClientRect();
-    const x = (e.clientX - left - width / 2) / 20; 
+    const x = (e.clientX - left - width / 2) / 20;
     const y = (e.clientY - top - height / 2) / 20;
-    
+
     imageContainerRef.current.style.transform = `perspective(1000px) rotateY(${x - 15}deg) rotateX(${-y + 10}deg) rotateZ(-3deg) scale(1.02)`;
   };
 
@@ -88,7 +88,7 @@ export default function ServicesSection() {
         {/* Left Column */}
         <div className="w-[45%] flex flex-col justify-center">
           <div className="relative w-full max-w-[450px] aspect-[1.3] mb-16 ml-4" style={{ perspective: "1000px" }}>
-            <div 
+            <div
               ref={imageContainerRef}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
@@ -96,7 +96,7 @@ export default function ServicesSection() {
               style={{ transform: "perspective(1000px) rotateY(-15deg) rotateX(10deg) rotateZ(-3deg) scale(1)" }}
             >
               <AnimatePresence>
-                <motion.img 
+                <motion.img
                   key={hoveredIndex}
                   src={services[hoveredIndex].image}
                   alt={services[hoveredIndex].title}
@@ -131,8 +131,8 @@ export default function ServicesSection() {
         {/* Right Column */}
         <div className="w-[55%] flex flex-col justify-center space-y-8">
           {services.map((service, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="group flex items-center justify-between cursor-hover"
               onMouseEnter={() => setHoveredIndex(index)}
             >
@@ -156,8 +156,8 @@ export default function ServicesSection() {
           const isExpanded = expandedIndex === index;
 
           return (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`border-b border-outline-variant py-8 cursor-pointer transition-colors duration-300`}
               onClick={() => setExpandedIndex(isExpanded ? null : index)}
             >
@@ -172,7 +172,7 @@ export default function ServicesSection() {
                     <span className="text-neutral-muted text-body-md mt-1 font-medium">{service.category}</span>
                   </div>
                 </div>
-                
+
                 {/* Toggle Icon */}
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300 flex-shrink-0 ${isExpanded ? 'bg-surface-charcoal text-canvas-white' : 'bg-surface-charcoal text-canvas-white'}`}>
                   {isExpanded ? <FiMinus className="w-5 h-5" /> : <FiPlus className="w-5 h-5" />}

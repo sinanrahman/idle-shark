@@ -1,11 +1,14 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 
 export default function Resources() {
+  const [activeFilter, setActiveFilter] = useState('All');
+
   const items = [
-    { title: 'The Future of Web Design', category: 'Blog', height: 'h-80', img: '/image/logo.jpeg' },
-    { title: 'Fintech App Redesign', category: 'Case Study', height: 'h-[400px]', img: '/image/logo.jpeg' },
-    { title: 'Optimizing React Performance', category: 'Blog', height: 'h-96', img: '/image/logo.jpeg' },
-    { title: 'Global E-commerce Launch', category: 'Case Study', height: 'h-[450px]', img: '/image/logo.jpeg' },
+    { title: 'The Future of Web Design', category: 'Blog', height: 'h-80', img: '/image/project-1.jpg' },
+    { title: 'Optimizing React Performance', category: 'Blog', height: 'h-[400px]', img: '/image/project-2.jpg' },
+    { title: 'Global E-commerce Launch', category: 'Case Study', height: 'h-96', img: '/image/project-3.jpg' },
+    { title: 'Fintech App Redesign', category: 'Case Study', height: 'h-[450px]', img: '/image/project-4.jpg' },
   ];
 
   return (
@@ -21,22 +24,35 @@ export default function Resources() {
         
         {/* Simple Filters */}
         <div className="flex space-x-4 mb-12">
-          {['All', 'Blog', 'Case Studies'].map((filter, i) => (
-            <button key={i} className={`px-6 py-2 rounded-full border ${i === 0 ? 'bg-surface-charcoal text-canvas-white border-canvas-white' : 'bg-transparent text-neutral-muted border-outline hover:border-surface-charcoal hover:text-surface-charcoal'} transition-colors`}>
-              {filter}
+          {[
+            { label: 'All', value: 'All' }, 
+            { label: 'Blog', value: 'Blog' }, 
+            { label: 'Case Studies', value: 'Case Study' }
+          ].map((filter, i) => (
+            <button 
+              key={i} 
+              onClick={() => setActiveFilter(filter.value)}
+              className={`px-6 py-2 rounded-full border transition-colors ${
+                activeFilter === filter.value 
+                  ? 'bg-surface-charcoal text-canvas-white border-surface-charcoal' 
+                  : 'bg-transparent text-neutral-muted border-outline hover:border-surface-charcoal hover:text-surface-charcoal'
+              }`}
+            >
+              {filter.label}
             </button>
           ))}
         </div>
 
-        {/* Masonry-like Grid */}
-        <div className="columns-1 md:columns-2 gap-8 space-y-8">
-          {items.map((item, i) => (
-            <motion.div 
-              key={i}
+        {/* Standard Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <AnimatePresence mode="popLayout">
+            {(activeFilter === 'All' ? items : items.filter(item => item.category === activeFilter)).map((item, i) => (
+              <motion.div 
+                key={item.title}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className={`relative rounded-xl overflow-hidden group cursor-hover ${item.height} break-inside-avoid shadow-[0_32px_64px_rgba(36,42,51,0.05)]`}
+              className="relative rounded-xl overflow-hidden group cursor-hover aspect-[4/3] shadow-[0_32px_64px_rgba(36,42,51,0.05)]"
             >
               <div className="absolute inset-0 z-10 bg-gradient-to-t from-surface-charcoal/90 via-surface-charcoal/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
               <img src={item.img} alt={item.title} className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-700" />
@@ -45,8 +61,9 @@ export default function Resources() {
                 <span className="text-accent-orange text-label-md uppercase tracking-wider mb-2 block">{item.category}</span>
                 <h3 className="text-headline-sm font-hanken font-bold text-canvas-white">{item.title}</h3>
               </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
       </div>
     </main>

@@ -10,6 +10,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Resources from './pages/Resources';
 import Contact from './pages/Contact';
+import Testimonials from './pages/Testimonials';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -60,6 +61,7 @@ function Layout() {
           <Route path="/services" element={<Services />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/work" element={<Resources />} /> {/* Fallback for Work */}
         </Routes>
         <Footer />

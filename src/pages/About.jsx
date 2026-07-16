@@ -22,7 +22,7 @@ export default function About() {
     <main className="min-h-screen bg-canvas-white pt-32 pb-20">
 
       {/* Who We Are */}
-      <section className="max-w-[var(--spacing-container-max)] mx-auto px-margin-edge py-section-gap">
+      <section className="max-w-[var(--spacing-container-max)] mx-auto px-margin-edge pb-section-gap">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export default function About() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="rounded-xl overflow-hidden h-[500px] shadow-[0_32px_64px_rgba(36,42,51,0.05)]"
           >
-            <img src="/image/logo.jpeg" alt="Idle Shark Team" className="w-full h-full object-cover transition-all duration-700" />
+            <img src="/image/about-us.jpg" alt="Idle Shark Logo" className="w-full h-full object-contain p-8 bg-canvas-white transition-all duration-700" />
           </motion.div>
           <div className="flex flex-col justify-center space-y-6 text-neutral-muted text-body-lg leading-relaxed">
             <p>

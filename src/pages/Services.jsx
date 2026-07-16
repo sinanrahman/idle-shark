@@ -8,6 +8,7 @@ export default function Services() {
     {
       id: '01',
       title: 'UX/UI Design',
+      img: '/image/service-1.png',
       subtitle: 'Design That Improves Conversion, Not Just Appearance',
       desc: 'Effective design doesn\'t just look clean — it guides users towards action. We create user experiences that reduce friction, increase engagement, and improve conversion rates across every touchpoint.',
       includes: [
@@ -26,6 +27,7 @@ export default function Services() {
     {
       id: '02',
       title: 'Web & App Development',
+      img: '/image/service-2.png',
       subtitle: 'High-Performance Digital Products Built to Scale',
       desc: 'We build fast, secure, and scalable platforms engineered for real-world use and long-term growth. No bloated code. No performance compromises. No shortcuts.',
       includes: [
@@ -45,6 +47,7 @@ export default function Services() {
     {
       id: '03',
       title: 'Branding & Identity',
+      img: '/image/service-3.png',
       subtitle: 'Positioning That Makes Your Business Stand Out',
       desc: 'Your brand is more than visuals — it is perception, trust, and market clarity. We build brand systems that communicate value instantly and consistently.',
       includes: [
@@ -62,6 +65,7 @@ export default function Services() {
     {
       id: '04',
       title: 'Digital Marketing & SEO',
+      img: '/image/service-4.png',
       subtitle: 'Visibility That Drives Real Business Results',
       desc: 'Traffic alone means nothing if it doesn\'t convert. We build marketing systems that attract the right users and turn them into customers.',
       includes: [
@@ -79,6 +83,7 @@ export default function Services() {
     {
       id: '05',
       title: 'Optimisation & Ongoing Support',
+      img: '/image/service-5.png',
       subtitle: 'Continuous Improvement After Launch',
       desc: 'We don\'t disappear after delivery. We monitor, optimise, and improve your digital systems to ensure sustained performance long after launch.',
       includes: [
@@ -193,9 +198,8 @@ export default function Services() {
                   transition={{ duration: 0.8 }}
                   className="w-full lg:w-1/2 h-[500px] rounded-2xl overflow-hidden shadow-[0_32px_64px_rgba(36,42,51,0.05)] bg-canvas-white p-2"
                 >
-                  <div className="w-full h-full rounded-xl overflow-hidden bg-surface-variant flex items-center justify-center">
-                    {/* Placeholder for real images */}
-                    <span className="text-neutral-muted font-bold tracking-widest uppercase">{service.title} VISUAL</span>
+                  <div className="w-full h-full rounded-xl overflow-hidden bg-surface-variant relative">
+                    <img src={service.img} alt={service.title} className="w-full h-full object-cover" />
                   </div>
                 </motion.div>
                 
