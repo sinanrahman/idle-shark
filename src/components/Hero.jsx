@@ -98,29 +98,31 @@ export default function Hero() {
       <div className="hero-left-content w-full md:w-[55%] h-[65vh] md:h-full flex flex-col justify-between pt-6 md:pt-10 pb-6 md:pb-12 px-6 md:px-12 relative z-10">
 
         {/* Top Nav (Inline) */}
-        <div className="flex w-full justify-between items-start text-body-md font-medium text-surface-charcoal">
-          <div>
-            <Link to="/about" className="hover:text-accent-orange transition-colors cursor-hover block">About</Link>
+        <div className="grid grid-cols-3 w-full items-start text-body-md font-medium text-surface-charcoal">
+          <div className="text-left">
+            <Link to="/about" className="hover:text-accent-orange transition-colors cursor-hover inline-block">About</Link>
           </div>
 
-          <div className="flex flex-col items-center md:items-start md:pl-8 md:w-1/2">
-            <Link to="/work" className="hover:text-accent-orange transition-colors cursor-hover flex flex-col md:flex-row md:items-start md:space-x-2 items-center">
-              <span className="md:pt-2">Project</span>
-            </Link>
+          <div className="flex flex-col items-center">
+            <div className="flex flex-col items-start">
+              <Link to="/work" className="hover:text-accent-orange transition-colors cursor-hover flex flex-col md:flex-row md:items-start items-center">
+                <span className="md:pt-2">Project</span>
+              </Link>
 
-            {/* Services List - Desktop */}
-            <div className="hidden md:flex mt-16 flex-col space-y-3 text-left pl-0 lg:pl-16">
-              {["UX/UI Design", "Development", "Brand Identity Design", "Ongoing Support"].map((service, index) => (
-                <span key={index} className="group relative overflow-hidden cursor-hover flex flex-col h-[1.5em] leading-[1.5em] text-surface-charcoal text-body-md">
-                  <span className="transition-transform duration-[400ms] ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full">{service}</span>
-                  <span className="absolute top-full left-0 transition-transform duration-[400ms] ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full text-accent-orange">{service}</span>
-                </span>
-              ))}
+              {/* Services List - Desktop */}
+              <div className="hidden md:flex mt-16 flex-col space-y-3 text-left md:pl-4 lg:pl-12">
+                {["UX/UI Design", "Development", "Brand Identity Design", "Ongoing Support"].map((service, index) => (
+                  <span key={index} className="group relative overflow-hidden cursor-hover flex flex-col h-[1.5em] leading-[1.5em] text-surface-charcoal text-body-md">
+                    <span className="transition-transform duration-[400ms] ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full">{service}</span>
+                    <span className="absolute top-full left-0 transition-transform duration-[400ms] ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full text-accent-orange">{service}</span>
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
-          <div className="text-right md:w-1/6 md:pr-4">
-            <Link to="/contact" className="hover:text-accent-orange transition-colors cursor-hover block">Contact</Link>
+          <div className="text-right pr-4">
+            <Link to="/contact" className="hover:text-accent-orange transition-colors cursor-hover inline-block">Contact</Link>
           </div>
         </div>
 

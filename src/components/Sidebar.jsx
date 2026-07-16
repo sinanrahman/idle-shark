@@ -11,7 +11,6 @@ export default function Sidebar() {
     { title: 'Home', path: '/#' },
     { title: 'Process', path: '/#process' },
     { title: 'Testimonials', path: '/#testimonials' },
-    { title: 'Resources', path: '/resources' },
     { title: 'Services', path: '/services' },
     { title: 'Contact', path: '/contact' },
   ];
@@ -28,15 +27,9 @@ export default function Sidebar() {
         </button>
 
         {/* Middle: Rotated Branding / Mobile Logo */}
-        <div className="flex-1 flex items-center justify-end md:justify-center w-full">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:relative md:left-0 md:top-0 md:translate-x-0 md:translate-y-0 md:flex-1 flex items-center justify-center w-auto md:w-full">
           <Link to="/" className="cursor-hover">
-            <img src="/image/logo-exact.png" alt="Idle Shark" className="hidden md:block w-[180px] md:w-[240px] h-auto transform -rotate-90 origin-center rounded-sm" />
-            <span className="md:hidden text-canvas-white font-hanken font-bold text-xl tracking-widest flex items-center gap-2">
-              <span className="w-6 h-6 rounded-md bg-canvas-white flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-4 h-4 fill-accent-orange"><path d="M12 2L2 22h20L12 2zm0 3.8L18.4 19H5.6L12 5.8z"/></svg>
-              </span>
-              IDLE SHARK
-            </span>
+            <img src="/image/logo-exact.png" alt="Idle Shark" className="w-[120px] md:w-[180px] lg:w-[240px] h-auto md:transform md:-rotate-90 origin-center rounded-sm" />
           </Link>
         </div>
 

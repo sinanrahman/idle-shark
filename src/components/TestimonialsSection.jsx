@@ -87,7 +87,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Right Column: Content */}
-          <div className="w-full lg:w-[60%] flex flex-col justify-center min-h-[500px]">
+          <div className="w-full lg:w-[60%] flex flex-col justify-center min-h-[350px] md:min-h-[500px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -98,12 +98,12 @@ export default function TestimonialsSection() {
                 className="flex flex-col h-full"
               >
                 {/* Main Quote */}
-                <h3 className="text-headline-md md:text-display-sm lg:text-[44px] xl:text-[52px] font-hanken font-bold text-canvas-white leading-[1.15] mb-8">
+                <h3 className="text-[22px] md:text-display-sm lg:text-[44px] xl:text-[52px] font-hanken font-bold text-canvas-white leading-[1.2] md:leading-[1.15] mb-6 md:mb-8">
                   {currentTestimonial.quote}
                 </h3>
                 
                 {/* Sub Quote */}
-                <p className="text-headline-sm font-hanken text-canvas-white/90 mb-12 max-w-2xl">
+                <p className="text-body-lg md:text-headline-sm font-hanken text-canvas-white/90 mb-8 md:mb-12 max-w-2xl">
                   {currentTestimonial.subquote}
                 </p>
                 
@@ -113,7 +113,7 @@ export default function TestimonialsSection() {
                 {/* Bottom Row: Author & Controls */}
                 <div className="flex items-center justify-between mt-auto">
                   <div>
-                    <h4 className="text-headline-sm font-hanken font-bold text-canvas-white">
+                    <h4 className="text-title-lg md:text-headline-sm font-hanken font-bold text-canvas-white">
                       {currentTestimonial.name}
                     </h4>
                     <p className="text-body-md font-medium text-canvas-white/80 mt-1">

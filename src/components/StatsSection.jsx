@@ -1,4 +1,30 @@
-import { motion } from 'framer-motion';
+import { motion, useInView, animate } from 'framer-motion';
+import { useRef, useEffect, useState } from 'react';
+
+function AnimatedCounter({ endValue, suffix }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [displayValue, setDisplayValue] = useState("0");
+
+  useEffect(() => {
+    if (inView) {
+      const controls = animate(0, endValue, {
+        duration: 2,
+        ease: "easeOut",
+        onUpdate(v) {
+          if (Number.isInteger(endValue)) {
+            setDisplayValue(Math.round(v).toString());
+          } else {
+            setDisplayValue(v.toFixed(1));
+          }
+        }
+      });
+      return () => controls.stop();
+    }
+  }, [inView, endValue]);
+
+  return <span ref={ref}>{displayValue}{suffix}</span>;
+}
 
 export default function StatsSection() {
   const stats = [
@@ -7,7 +33,8 @@ export default function StatsSection() {
       icon: (
         <img src="/image/stats-1.svg" alt="Website launched" className="w-24 h-24 object-contain" />
       ),
-      value: "17+",
+      endValue: 17,
+      suffix: "+",
       label: "Website launched"
     },
     {
@@ -15,7 +42,8 @@ export default function StatsSection() {
       icon: (
         <img src="/image/stats-2.svg" alt="Users reached" className="w-24 h-24 object-contain" />
       ),
-      value: "1.5M+",
+      endValue: 1.5,
+      suffix: "M+",
       label: "Users reached"
     },
     {
@@ -23,7 +51,8 @@ export default function StatsSection() {
       icon: (
         <img src="/image/stats-3.svg" alt="Client satisfaction rate" className="w-24 h-24 object-contain" />
       ),
-      value: "97%",
+      endValue: 97,
+      suffix: "%",
       label: "Client satisfaction rate"
     }
   ];
@@ -62,7 +91,7 @@ export default function StatsSection() {
                 {stat.icon}
               </div>
               <h3 className="text-display-lg md:text-[80px] font-hanken font-bold text-accent-orange leading-none mb-4">
-                {stat.value}
+                <AnimatedCounter endValue={stat.endValue} suffix={stat.suffix} />
               </h3>
               <p className="text-headline-sm font-medium text-surface-charcoal">
                 {stat.label}
