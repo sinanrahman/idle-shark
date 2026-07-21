@@ -19,39 +19,43 @@ export default function ProcessSection() {
   ];
 
   useEffect(() => {
-    // Horizontal scroll effect using GSAP
-    const totalScroll = cardsRef.current.length * 100;
+    let ctx = gsap.context(() => {
+      // Horizontal scroll effect using GSAP
+      const totalScroll = cardsRef.current.length * 100;
 
-    gsap.to(containerRef.current, {
-      x: () => -(containerRef.current.scrollWidth - window.innerWidth + 100),
-      ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        pin: true,
-        scrub: 1,
-        start: "top top",
-        end: () => `+=${totalScroll}%`,
-        invalidateOnRefresh: true
-      }
-    });
+      gsap.to(containerRef.current, {
+        x: () => -(containerRef.current.scrollWidth - window.innerWidth + 50),
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          pin: true,
+          scrub: 1,
+          start: "top top",
+          end: () => `+=${totalScroll}%`,
+          invalidateOnRefresh: true
+        }
+      });
 
-    // Timeline fill effect
-    gsap.to(timelineRef.current, {
-      scaleX: 1,
-      transformOrigin: "left center",
-      ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: () => `+=${totalScroll}%`,
-        scrub: 1
-      }
-    });
+      // Timeline fill effect
+      gsap.to(timelineRef.current, {
+        scaleX: 1,
+        transformOrigin: "left center",
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: () => `+=${totalScroll}%`,
+          scrub: 1
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
     <section id="process" ref={sectionRef} className="h-screen bg-canvas-white overflow-hidden relative flex flex-col justify-center">
-      <div className="absolute top-32 left-6 md:left-12 z-10">
+      <div className="absolute top-32 left-0 px-6 md:px-12 z-10 w-full">
         <h2 className="text-headline-lg font-hanken font-bold text-surface-charcoal mb-2">Our Process</h2>
         <p className="text-neutral-muted text-body-lg">A System Designed for Predictable Growth</p>
       </div>
@@ -62,13 +66,13 @@ export default function ProcessSection() {
 
       <div
         ref={containerRef}
-        className="flex w-max h-full items-center relative z-10 pl-[5vw] pr-[5vw] pt-20"
+        className="flex w-max h-full items-center relative z-10 pl-6 md:pl-12 pt-20"
       >
         {steps.map((step, i) => (
           <div
             key={i}
             ref={el => cardsRef.current[i] = el}
-            className="w-[100vw] md:w-[60vw] lg:w-[45vw] flex-shrink-0 px-6 md:px-12"
+            className="w-[90vw] md:w-[60vw] lg:w-[45vw] flex-shrink-0 pr-6 md:pr-12"
           >
             <div className="bg-canvas-white/80 backdrop-blur-xl border border-outline-variant rounded-xl p-10 md:p-16 h-[50vh] flex flex-col justify-between shadow-[0_32px_64px_rgba(36,42,51,0.05)] relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-8 text-display-xl font-hanken font-bold text-surface-container group-hover:text-surface-container-high transition-colors duration-500">

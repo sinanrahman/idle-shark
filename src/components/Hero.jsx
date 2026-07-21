@@ -97,59 +97,35 @@ export default function Hero() {
       {/* Left/Middle Content Area */}
       <div className="hero-left-content w-full md:w-[55%] h-[65vh] md:h-full flex flex-col justify-between pt-6 md:pt-10 pb-6 md:pb-12 px-6 md:px-12 relative z-10">
 
-        {/* Top Nav (Inline) */}
-        <div className="grid grid-cols-3 w-full items-start text-body-md font-medium text-surface-charcoal">
-          <div className="text-left">
-            <Link to="/about" className="hover:text-accent-orange transition-colors cursor-hover inline-block">About</Link>
-          </div>
-
-          <div className="flex flex-col items-center">
-            <div className="flex flex-col items-start">
-              <Link to="/work" className="hover:text-accent-orange transition-colors cursor-hover flex flex-col md:flex-row md:items-start items-center">
-                <span className="md:pt-2">Project</span>
-              </Link>
-
-              {/* Services List - Desktop */}
-              <div className="hidden md:flex mt-16 flex-col space-y-3 text-left md:pl-4 lg:pl-12">
-                {["UX/UI Design", "Development", "Brand Identity Design", "Ongoing Support"].map((service, index) => (
-                  <span key={index} className="group relative overflow-hidden cursor-hover flex flex-col h-[1.5em] leading-[1.5em] text-surface-charcoal text-body-md">
-                    <span className="transition-transform duration-[400ms] ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full">{service}</span>
-                    <span className="absolute top-full left-0 transition-transform duration-[400ms] ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full text-accent-orange">{service}</span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="text-right pr-4">
-            <Link to="/contact" className="hover:text-accent-orange transition-colors cursor-hover inline-block">Contact</Link>
-          </div>
-        </div>
-
-        {/* Services List - Mobile (Aligned Right) */}
-        <div className="md:hidden mt-6 flex flex-col space-y-1 text-right items-end w-full">
-          {["UX/UI Design", "Development", "Brand Identity Design", "Ongoing Support"].map((service, index) => (
-            <span key={index} className="text-surface-charcoal text-body-sm font-medium">
-              {service}
-            </span>
-          ))}
+        {/* Top: Logo */}
+        <div className="w-full">
+          <img src="/image/logo-exact.png" alt="Idle Shark" className="w-[140px] md:w-[200px] h-auto object-contain origin-left" />
         </div>
 
         {/* Bottom Typography */}
         <div className="mt-auto relative w-full mb-2 md:mb-0">
-          <motion.div initial="hidden" animate="visible" variants={lineVariants} className="overflow-hidden mb-0 md:mb-2">
-            <h2 className="text-[10vw] md:text-headline-sm font-hanken font-medium text-surface-charcoal leading-tight tracking-tight">
-              Digital <br className="hidden md:block" /> Engineered for Impact.
-            </h2>
-          </motion.div>
-
           <div className="relative inline-block w-full">
-            <motion.div initial="hidden" animate="visible" variants={lineVariants} transition={{ delay: 0.1 }} className="overflow-hidden">
+            <motion.div initial="hidden" animate="visible" variants={lineVariants} className="overflow-hidden">
               <h1 className="text-[17vw] md:text-[100px] lg:text-[130px] font-hanken font-bold text-accent-orange leading-[0.9] md:leading-[0.8] tracking-tighter uppercase mt-1 md:mt-2">
-                IDLE<br className="hidden md:block" />SHARK
+                IDLE<br />SHARK
               </h1>
             </motion.div>
           </div>
+
+          <motion.div initial="hidden" animate="visible" variants={lineVariants} transition={{ delay: 0.1 }} className="overflow-hidden mb-4 md:mb-6 mt-2">
+            <h2 className="text-[7vw] md:text-headline-sm font-hanken font-medium text-surface-charcoal leading-tight tracking-tight">
+              Digital Engineered for Impact.
+            </h2>
+          </motion.div>
+
+          <motion.div initial="hidden" animate="visible" variants={lineVariants} transition={{ delay: 0.2 }} className="overflow-hidden mt-6 md:mt-8 max-w-[90%] md:max-w-[85%] flex flex-col gap-2 md:gap-3">
+            <h3 className="text-title-md md:text-title-lg font-bold text-surface-charcoal leading-snug">
+              End-to-End Digital Systems — Built to Scale
+            </h3>
+            <p className="text-body-md md:text-body-lg text-surface-charcoal/80 leading-relaxed font-medium">
+              We don't offer disconnected services. We build cohesive digital systems in which every element works together. This will look complete clear
+            </p>
+          </motion.div>
         </div>
 
       </div>

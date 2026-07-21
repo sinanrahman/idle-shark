@@ -9,8 +9,9 @@ export default function Sidebar() {
 
   const navLinks = [
     { title: 'Home', path: '/#' },
+    { title: 'About', path: '/about' },
+    { title: 'Projects', path: '/work' },
     { title: 'Process', path: '/#process' },
-    { title: 'Testimonials', path: '/#testimonials' },
     { title: 'Services', path: '/services' },
     { title: 'Contact', path: '/contact' },
   ];
@@ -55,7 +56,7 @@ export default function Sidebar() {
               transition={{ type: 'tween', duration: 0.5, ease: 'easeInOut' }}
               className="hidden md:flex fixed top-0 left-24 h-screen w-96 bg-surface z-40 shadow-[0_32px_64px_rgba(36,42,51,0.05)] flex-col border-l border-outline-variant"
             >
-              <div className="flex-1 overflow-y-auto py-12 px-8 flex flex-col">
+              <div className="flex-1 overflow-y-hidden py-8 px-8 flex flex-col">
                 <div className="mb-8">
                   <p className="text-accent-orange text-label-md uppercase tracking-wider font-bold">Think Sharp. Move Smart.</p>
                 </div>
@@ -65,7 +66,7 @@ export default function Sidebar() {
                       key={i} 
                       to={link.path}
                       onClick={() => setIsOpen(false)}
-                      className="flex items-center justify-between py-5 px-8 -mx-8 text-headline-sm font-hanken font-bold text-surface-charcoal border-b border-outline-variant hover:bg-surface-charcoal hover:text-canvas-white transition-all duration-300 cursor-hover group"
+                      className="flex items-center justify-between py-3 px-8 -mx-8 text-[20px] font-hanken font-bold text-surface-charcoal border-b border-outline-variant hover:bg-surface-charcoal hover:text-canvas-white transition-all duration-300 cursor-hover group"
                     >
                       <span>{link.title}</span>
                       <FiMinus className="text-surface-charcoal group-hover:text-canvas-white transition-colors" />
@@ -89,9 +90,9 @@ export default function Sidebar() {
               animate={{ y: 0 }}
               exit={{ y: '-100%' }}
               transition={{ type: 'tween', duration: 0.5, ease: 'easeInOut' }}
-              className="md:hidden fixed top-16 left-0 w-full bg-surface z-30 shadow-[0_32px_64px_rgba(36,42,51,0.1)] flex flex-col border-b border-outline-variant max-h-[calc(100vh-4rem)] overflow-y-auto"
+              className="md:hidden fixed top-16 left-0 w-full bg-surface z-30 shadow-[0_32px_64px_rgba(36,42,51,0.1)] flex flex-col border-b border-outline-variant max-h-[calc(100vh-4rem)] overflow-y-hidden"
             >
-              <div className="py-8 px-6 flex flex-col">
+              <div className="py-6 px-6 flex flex-col">
                 <div className="mb-6">
                   <p className="text-accent-orange text-label-md uppercase tracking-wider font-bold">Think Sharp. Move Smart.</p>
                 </div>
@@ -101,7 +102,7 @@ export default function Sidebar() {
                       key={i} 
                       to={link.path}
                       onClick={() => setIsOpen(false)}
-                      className="flex items-center justify-between py-4 px-6 -mx-6 text-headline-sm font-hanken font-bold text-surface-charcoal border-b border-outline-variant hover:bg-surface-charcoal hover:text-canvas-white transition-all duration-300 cursor-hover group"
+                      className="flex items-center justify-between py-3 px-6 -mx-6 text-[18px] font-hanken font-bold text-surface-charcoal border-b border-outline-variant hover:bg-surface-charcoal hover:text-canvas-white transition-all duration-300 cursor-hover group"
                     >
                       <span>{link.title}</span>
                       <FiMinus className="text-surface-charcoal group-hover:text-canvas-white transition-colors" />

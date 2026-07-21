@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 
 export default function WorkAccordion() {
   const projects = [
-    { title: 'The Future of Web Design', subtitle: 'Interactive UI Experience', category: 'Concept & Style', img: '/image/project-1.jpg' },
-    { title: 'Optimizing React Performance', subtitle: 'Technical Architecture', category: 'Development', img: '/image/project-2.jpg' },
-    { title: 'Global E-commerce Launch', subtitle: 'Conversion Optimization', category: 'E-commerce', img: '/image/project-3.jpg' },
-    { title: 'Fintech App Redesign', subtitle: 'Financial Dashboard Strategy', category: 'UI/UX Design', img: '/image/project-4.jpg' },
+    { title: 'Pure Estates', subtitle: 'Premium Property Portal', category: 'Real Estate Platform', img: '/image/s-project-1.png' },
+    { title: 'Vahora Logistics', subtitle: 'Global Supply Chain Dashboard', category: 'Logistics Software', img: '/image/s-project-2.png' },
+    { title: 'Legacy Financial', subtitle: 'Secure Banking App Redesign', category: 'Fintech', img: '/image/project-4.jpg' },
+    { title: 'Nexus Enterprise', subtitle: 'Corporate Intranet Solution', category: 'B2B Software', img: '/image/s-project-4.jpg' },
   ];
 
   return (
